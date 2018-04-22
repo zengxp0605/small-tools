@@ -1,8 +1,10 @@
 
 
-# youtube-yl 下载工具, 基于nodejs 做的批量下载
+# youtube-dl 下载工具, 基于nodejs 做的批量下载
 
-## 使用前安装  
+## 使用前安装
+> 需要先安装 youtube-dl: [官网](http://rg3.github.io/youtube-dl/)  
+> [windows download](https://yt-dl.org/latest/youtube-dl.exe)
 ```
 npm install
 ```
