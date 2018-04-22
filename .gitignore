@@ -4,3 +4,7 @@ package-lock.json
 
 *.flv
 *.flv.part
+
+*.webm
+*.mp4
+*.mp3

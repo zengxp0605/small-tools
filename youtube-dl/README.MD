@@ -10,7 +10,7 @@ npm install
 ```
 
 ## Bilibili 列表批量下载
-> 文件会下载到当前目录
+> 文件会下载到当前目录,下载后保存为播放时的文件名
 ```
 cd bilibili
 # av5892786 是需要下载链接里获取的 如: https://www.bilibili.com/video/av16404880/?p=1
