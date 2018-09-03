@@ -1,10 +1,9 @@
 module.exports = {
     ali: {
-        host: '16.15.21.155',
+      host: '106.15.201.155',
         port: 22,
-        username: 'root2',
-        password: 'tttt',
-        //privateKey: require('fs').readFileSync('/home/admin/.ssh/id_dsa')
+        username: 'root',
+        privateKey: require('fs').readFileSync('C:/Users/zxp/.ssh/id_rsa.pub', 'utf-8'); 
     },
 
     // 开发环境

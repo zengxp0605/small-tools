@@ -1,17 +1,18 @@
-const conf = require('./config');
-const Client = require('ssh2').Client;
 
-const conn = new Client();
-conn.on('ready', function () {
-    conn.exec('echo 222 >> test.txt; echo 3333;', function (err, stream) {
-        if (err) throw err;
+/**
+ * 拉取博客代码
+ */
+const shellBase = require('./shellBase');
 
-        stream.on('close', function (code, signal) {
-            conn.end();
-        }).on('data', function (data) {
-            console.log('STDOUT: ' + data);
-        }).stderr.on('data', function (data) {
-            console.log('STDERR: ' + data);
-        });
-    });
-}).connect(conf.ali);
+let env = 'ali';
+
+let now = Date.now();
+
+let cmds = `
+su www;
+cd /data/httpd/blog/html/;
+git pull origin master;
+echo ${now} >> test.txt;
+`;
+
+shellBase({ env, cmds });
