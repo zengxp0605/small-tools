@@ -54,10 +54,13 @@ async function sendToMyKindle() {
     if (!rs) {
         return;
     }
-    for (let item of attachments) {
-        console.log('Remove file', item.path);
-        execSync(`rm -rf ${item.path}`)
-    }
+
+    setTimeout(() => {
+        for (let item of attachments) {
+            console.log('Remove file', item.path);
+            // execSync(`rm -rf ${item.path}`)
+        }
+    }, 10000);
 }
 
 sendToMyKindle();
