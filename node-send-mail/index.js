@@ -11,7 +11,7 @@ const { sendMail } = require('./sendMail');
 //     },
 //     {   // file on disk as an attachment
 //         // filename: 'text3.txt',
-//         path: 'C:/Users/zengxiaoping/Dropbox/e-books/老人与海.mobi' // stream this file
+//         path: 'C:/Users/e-books/老人与海.mobi' // stream this file
 //     }
 // ];
 
@@ -35,10 +35,10 @@ for (let name of files) {
 console.log(files, filePath, attachments);
 
 // wen: 769949023@kindle.cn
-async function sendToMe() {
+async function sendToMyKindle() {
     const emails = [
-        '1548398984@qq.com',
-        // 'jasonzeng0605@kindle.cn'
+        // '1548398984@qq.com',
+        'jasonzeng0605@kindle.cn'
     ];
     const param = {
         to: emails,
@@ -60,4 +60,4 @@ async function sendToMe() {
     }
 }
 
-sendToMe();
+sendToMyKindle();
