@@ -1,4 +1,5 @@
 const path = require('path');
+const execSync = require('child_process').execSync;
 const { sendMail } = require('./sendMail');
 
 
@@ -22,6 +23,9 @@ const files = require('fs').readdirSync(filePath);
 
 
 for (let name of files) {
+    if (name === '.gitkeep') {
+        continue;
+    }
     attachments.push({
         filename: name,
         path: path.join(filePath, name),
@@ -33,8 +37,8 @@ console.log(files, filePath, attachments);
 // wen: 769949023@kindle.cn
 async function sendToMe() {
     const emails = [
-        // '1548398984@qq.com',
-        'jasonzeng0605@kindle.cn'
+        '1548398984@qq.com',
+        // 'jasonzeng0605@kindle.cn'
     ];
     const param = {
         to: emails,
@@ -47,10 +51,12 @@ async function sendToMe() {
 
     let rs = await sendMail(param);
     console.log(rs);
-    if (rs) {
-        require('child_process').exec(`rm -rf ${filePath}/*`, (err, out) => {
-            console.log(err, out);
-        });
+    if (!rs) {
+        return;
+    }
+    for (let item of attachments) {
+        console.log('Remove file', item.path);
+        execSync(`rm -rf ${item.path}`)
     }
 }
 
