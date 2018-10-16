@@ -58,7 +58,7 @@ async function sendToMyKindle() {
     setTimeout(() => {
         for (let item of attachments) {
             console.log('Remove file', item.path);
-            // execSync(`rm -rf ${item.path}`)
+            execSync(`rm -rf ${item.path}`)
         }
     }, 10000);
 }
