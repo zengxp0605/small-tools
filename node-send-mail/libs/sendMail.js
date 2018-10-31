@@ -38,7 +38,7 @@ exports.sendMail = async (params) => {
 
     let info = await transporter.sendMail(mailOptions);
 
-    console.log('Message sent successfully!');
+    console.log('Message sent successfully!', 'toEmail: ', to);
     // console.log(nodemailer.getTestMessageUrl(info));
 
     // only needed when using pooled connections

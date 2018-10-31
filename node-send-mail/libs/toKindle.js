@@ -18,7 +18,7 @@ const { sendMail } = require('./sendMail');
 const attachments = [];
 
 // 获取临时文件目录 tmpAtt 下发附件
-const filePath = path.join(__dirname, './tmpAtt');
+const filePath = path.join(__dirname, '../tmpAtt');
 const files = require('fs').readdirSync(filePath);
 
 
@@ -34,12 +34,16 @@ for (let name of files) {
 
 console.log(files, filePath, attachments);
 
-// wen: 769949023@kindle.cn
-async function sendToMyKindle() {
-    const emails = [
-        // '1548398984@qq.com',
-        'jasonzeng0605@kindle.cn'
-    ];
+
+async function sendToKindle(emails) {
+    // const emails = [
+    //     // '1548398984@qq.com',
+    //     'jasonzeng0605@kindle.cn',
+    //     //  '769949023@kindle.cn',
+    // ];
+    if (typeof emails === 'string') {
+        emails = [emails];
+    }
     const param = {
         to: emails,
         subject: 'Kindle books',
@@ -63,4 +67,4 @@ async function sendToMyKindle() {
     }, 10000);
 }
 
-sendToMyKindle();
+module.exports = sendToKindle;
