@@ -11,4 +11,12 @@
 > 通过nodejs 发送邮件
 > 主要用于发送附件到kindle
 
-# TODO:  制作windows 客户端
+- TODO:  制作windows 客户端
+
+## excel2json
+> excel 文件转为json
+
+## node-spider-book
+> node 爬取一些图书内容
+
+

@@ -1,0 +1,2 @@
+
+require('./little-prince').init();
